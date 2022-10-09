@@ -5,7 +5,7 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static String _title = 'Parking App';
+  static const String _title = 'Parking App';
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(
-            title: Center(
+            title: const Center(
           child: Text(
             _title,
             style: TextStyle(color: Colors.orange),
