@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'MyExpendedRow.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   static const String _title = 'Parking App';
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
             style: TextStyle(color: Colors.orange),
           ),
         )),
-        body: const Center(
+        body: Center(
           child: MyStatefulWidget(),
         ),
       ),
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
+  MyStatefulWidget({super.key});
 
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
@@ -40,7 +39,7 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   String emptyOrFilled = 'Filled';
-
+  int sayfaIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -48,6 +47,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       MyExpendedRow(emptyOrFilled: emptyOrFilled),
       MyExpendedRow(emptyOrFilled: emptyOrFilled),
       BottomNavigationBar(
+        onTap: (int i) {
+          switch (i) {
+            case 0:
+              print('Tıkladınız Places');
+              setState(() {
+                sayfaIndex = 0;
+              });
+              break;
+            case 1:
+              print('Tıkladığınız ParkingMap');
+              setState(() {
+                sayfaIndex = 1;
+              });
+              break;
+            case 2:
+              print('Tıkladığınız Reservation');
+              setState(() {
+                sayfaIndex = 2;
+              });
+              break;
+          }
+        },
+        currentIndex: sayfaIndex,
         backgroundColor: Colors.black38,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
