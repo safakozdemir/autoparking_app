@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'MyExpendedRow.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      //theme: ThemeData.dark(),
       title: _title,
       home: Scaffold(
         appBar: AppBar(
@@ -37,203 +39,31 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  String emptyOrFilled = 'Filled';
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Expanded(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-        ]),
-      ),
-      Expanded(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-        ]),
-      ),
-      Expanded(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-          Expanded(
-            child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Parking Place',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.car_rental, size: 70),
-                      tooltip: 'Reservation Button',
-                      onPressed: () {
-                        setState(() {
-                          print('parking place reservated');
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30))),
-          ),
-        ]),
-      ),
+      MyExpendedRow(emptyOrFilled: emptyOrFilled),
+      MyExpendedRow(emptyOrFilled: emptyOrFilled),
+      MyExpendedRow(emptyOrFilled: emptyOrFilled),
       BottomNavigationBar(
         backgroundColor: Colors.black38,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            tooltip: 'Parking places page',
             icon: Icon(Icons.place),
             label: 'Places',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            tooltip: 'Parking map page',
+            icon: Icon(Icons.map_outlined),
+            label: 'Parking map',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            tooltip: 'Reservation page',
+            icon: Icon(Icons.monetization_on_outlined),
+            label: 'Reservation',
           ),
         ],
       )
