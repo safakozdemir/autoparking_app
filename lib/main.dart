@@ -1,76 +1,54 @@
 import 'package:flutter/material.dart';
-import 'MyExpendedRow.dart';
+import 'ParkingMap.dart';
+import 'Places.dart';
+import 'Reservation.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
-
-  static const String _title = 'Parking App';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+void main() => runApp(const MaterialApp(
+      home: MyStatefulWidget(),
       debugShowCheckedModeBanner: false,
       //theme: ThemeData.dark(),
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(
-            title: const Center(
-          child: Text(
-            _title,
-            style: TextStyle(color: Colors.orange),
-          ),
-        )),
-        body: Center(
-          child: MyStatefulWidget(),
-        ),
-      ),
-    );
-  }
-}
+      title: 'Parking App',
+    ));
 
 class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({super.key});
+  const MyStatefulWidget({super.key});
 
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  String emptyOrFilled = 'Filled';
   int sayfaIndex = 0;
+  Widget? aktifSayfa;
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      MyExpendedRow(emptyOrFilled: emptyOrFilled),
-      MyExpendedRow(emptyOrFilled: emptyOrFilled),
-      MyExpendedRow(emptyOrFilled: emptyOrFilled),
-      BottomNavigationBar(
+    return Scaffold(
+      body: aktifSayfa,
+      bottomNavigationBar: BottomNavigationBar(
         onTap: (int i) {
           switch (i) {
             case 0:
-              print('Tıkladınız Places');
               setState(() {
                 sayfaIndex = 0;
+                aktifSayfa = Places();
               });
               break;
             case 1:
-              print('Tıkladığınız ParkingMap');
               setState(() {
                 sayfaIndex = 1;
+                aktifSayfa = ParkingMap();
               });
               break;
             case 2:
-              print('Tıkladığınız Reservation');
               setState(() {
                 sayfaIndex = 2;
+                aktifSayfa = Reservation();
               });
               break;
           }
         },
         currentIndex: sayfaIndex,
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.amberAccent,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             tooltip: 'Parking places page',
@@ -88,7 +66,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Reservation',
           ),
         ],
-      )
-    ]);
+      ),
+    );
   }
 }
