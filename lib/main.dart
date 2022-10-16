@@ -18,36 +18,37 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int sayfaIndex = 0;
-  Widget? aktifSayfa;
+  int pageIndex = 0;
+  Widget? activePage;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: aktifSayfa,
+      body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int i) {
           switch (i) {
             case 0:
               setState(() {
-                sayfaIndex = 0;
-                aktifSayfa = Places();
+                pageIndex = 0;
+                activePage = const Places();
               });
               break;
             case 1:
               setState(() {
-                sayfaIndex = 1;
-                aktifSayfa = ParkingMap();
+                pageIndex = 1;
+                activePage = const ParkingMap();
               });
               break;
             case 2:
               setState(() {
-                sayfaIndex = 2;
-                aktifSayfa = Reservation();
+                pageIndex = 2;
+                activePage = const Reservation();
               });
               break;
           }
         },
-        currentIndex: sayfaIndex,
+        currentIndex: pageIndex,
         backgroundColor: Colors.amberAccent,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

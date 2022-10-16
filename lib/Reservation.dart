@@ -10,19 +10,19 @@ class Reservation extends StatefulWidget {
 }
 
 class _ReservationState extends State<Reservation> {
-  String emptyOrFilled = 'Filled';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amberAccent,
         title: const Center(
             child: Text('Reservation',
-                style: TextStyle(fontSize: 20, color: Colors.amberAccent))),
+                style: TextStyle(fontSize: 20, color: Colors.black))),
       ),
       body: Column(children: [
-        MyExpendedRow(emptyOrFilled: emptyOrFilled),
-        MyExpendedRow(emptyOrFilled: emptyOrFilled),
-        MyExpendedRow(emptyOrFilled: emptyOrFilled),
+        MyExpendedRow(),
+        MyExpendedRow(),
+        MyExpendedRow(),
       ]),
     );
   }
