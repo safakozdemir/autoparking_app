@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'ParkingMap.dart';
-import 'Places.dart';
-import 'Reservation.dart';
+import 'parking_map.dart';
+import 'places.dart';
+import 'reservation.dart';
 
 void main() => runApp(const MaterialApp(
       home: MyStatefulWidget(),

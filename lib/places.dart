@@ -4,10 +4,10 @@ class Places extends StatefulWidget {
   const Places({Key? key}) : super(key: key);
 
   @override
-  _PlacesState createState() => _PlacesState();
+  PlacesState createState() => PlacesState();
 }
 
-class _PlacesState extends State<Places> {
+class PlacesState extends State<Places> {
   String emptyOrFilled = 'Filled';
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,8 @@ class _PlacesState extends State<Places> {
           children: [
             const SizedBox(height: 5, width: 5),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(17)),
               elevation: 10,
               child: ListTile(
                 iconColor: Colors.amber,
@@ -41,6 +43,8 @@ class _PlacesState extends State<Places> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(17)),
               elevation: 10,
               child: ListTile(
                 iconColor: Colors.amber,
@@ -58,6 +62,8 @@ class _PlacesState extends State<Places> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(17)),
               elevation: 10,
               child: ListTile(
                 iconColor: Colors.amber,
@@ -75,6 +81,8 @@ class _PlacesState extends State<Places> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(17)),
               elevation: 10,
               child: ListTile(
                 iconColor: Colors.amber,

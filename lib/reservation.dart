@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'MyExpendedRow.dart';
+import 'my_expended_row.dart';
 
 class Reservation extends StatefulWidget {
   const Reservation({Key? key}) : super(key: key);
 
   @override
-  _ReservationState createState() => _ReservationState();
+  ReservationState createState() => ReservationState();
 }
 
-class _ReservationState extends State<Reservation> {
+class ReservationState extends State<Reservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
