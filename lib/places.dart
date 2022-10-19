@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:parkingapp/parking_map.dart';
+import 'package:parkingapp/reservation.dart';
 
 class Places extends StatefulWidget {
   const Places({Key? key}) : super(key: key);
@@ -9,6 +11,7 @@ class Places extends StatefulWidget {
 
 class PlacesState extends State<Places> {
   String emptyOrFilled = 'Filled';
+  int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,14 @@ class PlacesState extends State<Places> {
                   Icons.chevron_right_rounded,
                   size: 40,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ParkingMap(),
+                    ),
+                  );
+                },
               ),
             ),
             Card(
@@ -58,7 +68,14 @@ class PlacesState extends State<Places> {
                   Icons.chevron_right_rounded,
                   size: 40,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ParkingMap(),
+                    ),
+                  );
+                },
               ),
             ),
             Card(
@@ -77,7 +94,14 @@ class PlacesState extends State<Places> {
                   Icons.chevron_right_rounded,
                   size: 40,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ParkingMap(),
+                    ),
+                  );
+                },
               ),
             ),
             Card(
@@ -97,11 +121,76 @@ class PlacesState extends State<Places> {
                   Icons.chevron_right_rounded,
                   size: 40,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ParkingMap(),
+                    ),
+                  );
+                },
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (int i) {
+          switch (i) {
+            case 0:
+              setState(() {
+                pageIndex = 0;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Places(),
+                  ),
+                );
+              });
+              break;
+            case 1:
+              setState(() {
+                pageIndex = 1;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ParkingMap(),
+                  ),
+                );
+              });
+              break;
+            case 2:
+              setState(() {
+                pageIndex = 2;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Reservation(),
+                  ),
+                );
+              });
+              break;
+          }
+        },
+        currentIndex: pageIndex,
+        backgroundColor: Colors.amberAccent,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            tooltip: 'Parking places page',
+            icon: Icon(Icons.place),
+            label: 'Places',
+          ),
+          BottomNavigationBarItem(
+            tooltip: 'Parking map page',
+            icon: Icon(Icons.map_outlined),
+            label: 'Parking map',
+          ),
+          BottomNavigationBarItem(
+            tooltip: 'Reservation page',
+            icon: Icon(Icons.monetization_on_outlined),
+            label: 'Reservation',
+          ),
+        ],
       ),
     );
   }

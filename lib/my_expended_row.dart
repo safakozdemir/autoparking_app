@@ -14,7 +14,7 @@ class _MyExpendedRowState extends State<MyExpendedRow> {
 
   Color _color1 = Colors.black54;
   Color _color2 = Colors.black54;
-  Color _circleAvatarColor1 = Colors.redAccent;
+  Color _circleAvatarColor1 = Colors.green;
   Color _circleAvatarColor2 = Colors.redAccent;
   String emptyOrFilled1 = 'EMPTY';
   String emptyOrFilled2 = 'EMPTY';
@@ -70,9 +70,9 @@ class _MyExpendedRowState extends State<MyExpendedRow> {
                 emptyOrFilled1 == 'FİLLED'
                     ? emptyOrFilled1 = 'EMPTY'
                     : emptyOrFilled1 = 'FİLLED';
-                _circleAvatarColor1 == Colors.green
-                    ? _circleAvatarColor1 = Colors.redAccent
-                    : _circleAvatarColor1 = Colors.green;
+                _circleAvatarColor1 == Colors.redAccent
+                    ? _circleAvatarColor1 = Colors.green
+                    : _circleAvatarColor1 = Colors.redAccent;
               });
 
               a++;
