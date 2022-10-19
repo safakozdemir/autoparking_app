@@ -10,7 +10,6 @@ class Places extends StatefulWidget {
 }
 
 class PlacesState extends State<Places> {
-  String emptyOrFilled = 'Filled';
   int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +42,7 @@ class PlacesState extends State<Places> {
                   size: 40,
                 ),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ParkingMap(),
@@ -69,7 +68,7 @@ class PlacesState extends State<Places> {
                   size: 40,
                 ),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ParkingMap(),
@@ -95,7 +94,7 @@ class PlacesState extends State<Places> {
                   size: 40,
                 ),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ParkingMap(),
@@ -122,7 +121,7 @@ class PlacesState extends State<Places> {
                   size: 40,
                 ),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ParkingMap(),
@@ -140,7 +139,7 @@ class PlacesState extends State<Places> {
             case 0:
               setState(() {
                 pageIndex = 0;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Places(),
@@ -151,7 +150,7 @@ class PlacesState extends State<Places> {
             case 1:
               setState(() {
                 pageIndex = 1;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ParkingMap(),
@@ -162,7 +161,7 @@ class PlacesState extends State<Places> {
             case 2:
               setState(() {
                 pageIndex = 2;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Reservation(),

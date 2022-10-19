@@ -35,7 +35,7 @@ class ParkingMapState extends State<ParkingMap> {
             case 0:
               setState(() {
                 pageIndex = 0;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Places(),
@@ -46,7 +46,7 @@ class ParkingMapState extends State<ParkingMap> {
             case 1:
               setState(() {
                 pageIndex = 1;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ParkingMap(),
@@ -57,7 +57,7 @@ class ParkingMapState extends State<ParkingMap> {
             case 2:
               setState(() {
                 pageIndex = 2;
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Reservation(),
