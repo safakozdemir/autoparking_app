@@ -4,7 +4,6 @@ import 'places.dart';
 void main() => runApp(const MaterialApp(
       home: MyStatefulWidget(),
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData.dark(),
       title: 'Parking App',
     ));
 
