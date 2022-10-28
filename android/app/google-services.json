@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558078228576",
+    "project_id": "auto-parking-app",
+    "storage_bucket": "auto-parking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558078228576:android:0bfa1958b1f35856a32b05",
+        "android_client_info": {
+          "package_name": "com.parkingapp.parkingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558078228576-hec4l61e1l5mn6rarir8bsejns91ahlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7eax6LgP9W4868LP7hEBUi1aPNk8EadQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558078228576-hec4l61e1l5mn6rarir8bsejns91ahlk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
